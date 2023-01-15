@@ -1,0 +1,33 @@
+<div id="container">
+  <div id="header">
+    <div class="avatarSection">
+      <div class="picture">
+        
+      </div>
+
+      <div class="nameSection"></div>
+    </div>
+  
+  </div>
+  <div id="body">
+    <div
+      class="message"
+      [ngClass]="{ me: message.me }"
+      *ngFor="let message of conversation.messages"
+    >
+      <div class="messageContent">
+        {{ message.body }}
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+  
+    <div id="textarea">
+      <textarea
+        [(ngModel)]="message"
+        (keyup.enter)="submitMessage($event)"
+      ></textarea>
+    </div>
+   
+  </div>
+</div>
